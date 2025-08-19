@@ -137,5 +137,9 @@ if st.button("Match Resumes"):
             # --- Download Tab ---
             with tab3:
                 excel_file = "resume_job_matches.xlsx"
-                final_df.to_excel(excel_file, index=False)
-                st.download_button("📥 Download Results as Excel", data=open(excel_file,"rb").read(), file_name=excel_file)
+                # Export Excel using openpyxl explicitly
+                final_df.to_excel(excel_file, index=False, engine='openpyxl')
+
+                # Use context manager to read the file for download
+                with open(excel_file, "rb") as f:
+                    st.download_button("📥 Download Results as Excel", data=f.read(), file_name=excel_file)
