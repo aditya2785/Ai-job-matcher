@@ -5,3 +5,4 @@ numpy
 python-dotenv
 plotly
 google-genai
+openpyxl
