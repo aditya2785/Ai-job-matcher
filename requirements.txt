@@ -1,0 +1,7 @@
+streamlit
+pdfplumber
+pandas
+numpy
+python-dotenv
+plotly
+google-genai
